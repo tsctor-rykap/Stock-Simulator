@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Handlee&family=Space+Grotesk:wght@300..700&display=swap');
+*{
+  padding:0;
+  margin:0;
+  font-family: Handlee;
+}
+html {
+  height: 100%;
+  width: 100%;
+  background-color: #A1C3D1;
+  color: white;
+}
+/* div{
+  background-color: #F172A1;
+  width: 200px;
+  height: 100px;
+  
+} */
+h1{
+  color: #E64398;
+  font-size: 50px;
+}
+h3{
+
+  color: #9577a6;
+  font-size: 20px;
+  
+}
+img{
+  width: 300px;
+  height: 300;
+}
+#backgroundimg{
+  background-image: url("money-2.webp");
+  background-size: cover;
+  /* background-repeat: no-repeat; */
+  height: 60vh;
+  width:100vw;
+  
+}
+#opacitychanger{
+  background-color: white;
+  height: 25vh;
+  width: 50vw;
+  opacity: 0.75;
+  /* display: inline-block; */
+  /* position: relative;
+  top: 12vh;
+  left: 25vw; */
+}
+#title{
+  /* position: absolute; */
+  margin:auto;
+  width: 300px;
+  height: 200px;
+  top: -10vh;
+  /* left: 12vw; */
+  text-align: center;
+  position:relative;
+  z-index: 3;
+  
+}
+#main{
+  padding: 20px;
+  margin:auto;
+  width: 690px;
+  
+}
+.section{
+  box-sizing: border-box;
+  padding: 5%;
+  vertical-align: top;
+  display:flex;
+align-items: center;
+  margin: auto;
+  /* background-color:#c7becc;
+color: black; */
+  background-color: #9577a6;
+  border-radius: 15px;
+  animation: fadeeinn 5s;
+}
+.section img{
+  height: 300px;
+  width: 350px;
+  margin-left: 10px;
+}
+.section p{
+  width: 300px;
+  position:relative;
+  top:0px;
+  font-size: 20px;
+  padding-right: 10px;
+  
+}
+#main h2{
+  text-align: center;
+  padding: 2%;
+  font-size: 35px;
+  /* text-shadow: 0 0 3px #E64398; */
+  
+}
+#button{
+  padding: 5px;
+  font-weight: 700;
+  height: 40px;
+  width: 100px;
+}
+#header{
+  position: relative;
+  display: flex;
+  align-items: center;
+    height: 25vh;
+    width: 50vw;
+  margin:auto;
+  top:10vh;
+  text-align: center;
+  z-index: 2;
+}
+@keyframes fadeeinn{
+  from{
+    opacity:0
+  }
+  to{
+    opacity:1
+  }
+}

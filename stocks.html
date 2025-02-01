@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="stock.css" rel="stylesheet" type="text/css" />
+
+    <title>Stocks</title>
+</head>
+
+<body>
+
+    <div class="section">
+        <div id="cashdiv">
+            
+            <h2> Stocks</h2>
+                    
+                
+            
+        <div id="stock">
+            <div id="pie">
+                
+            </div>
+            <div id="status">
+                
+            <h3 id="cash">Money</h3>
+                  <button type="button" onclick="updateCash()" id="buttonn">Continue</button>
+
+            </div>
+        </div>
+        </div>
+        <div class="card" >
+            
+            <img src="Apple-Logo.jpg" alt="Trulli">
+            <h3> Apple Inc</h3>
+
+            <button type="button" id="button" onclick="buy(0)">Buy</button>
+            <button type="button" id="button" onclick="sell(0)">Sell</button>
+            <p id = "applecost">Worth = $200</p>
+            <div class="slidecontainer">
+
+
+                <p>Slider</p>
+                <input type="range" min="0" max="100" value="50" class="slider"  id="appleRange" onchange="updateShare(0)">
+                <p id="appleShares"></p>
+                <p class="sharesOwned">Owned:</p>
+                <p class="sharesValue">Value: </p>
+            </div>
+        </div>
+        <!-- </div> -->
+        <div class="card">
+            <img src="Walt-Disney-.jpg" alt="Trulli">
+            <h3>Walt Disney Co</h3>
+
+            <button type="button" id="button" onclick="buy(1)">Buy</button>
+            <button type="button" id="button" onclick="sell(1)">Sell</button>
+            <p id = "disneycost">Worth = $95</p>
+            <div class="slidecontainer">
+
+
+                <p>Slider:</p>
+                
+                <input type="range" min="0" max="100" value="50" class="slider" id="disneyRange" onchange="updateShare(1)">
+                <p id="disneyShares"></p>
+                <p class="sharesOwned">Owned:</p>
+                <p class="sharesValue">Value: </p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="Tesla_logo.png" alt="Trulli">
+            <h3>Tesla Inc</h3>
+
+
+            <button type="button" id="button" onclick="buy(2)">Buy</button>
+            <button type="button" id="button" onclick="sell(2)">Sell</button>
+            <p id = "teslacost">Worth = $250</p>
+            <div class="slidecontainer">
+
+
+                <p>Slider:</p>
+                <input type="range" min="0" max="100" value="50" class="slider" id="teslaRange" onchange="updateShare(2)">
+                <p id="teslaShares"></p>
+                <p class="sharesOwned">Owned:</p>
+                <p class="sharesValue">Value: </p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="intel-logo-3.webp" alt="Trulli">
+            <h3>Intel Corp</h3>
+
+            <button type="button" id="button" onclick="buy(3)">Buy</button>
+            <button type="button" id="button" onclick="sell(3)">Sell</button>
+            <p id = "intelcost">Worth = $25</p>
+            <div class="slidecontainer">
+
+
+                <p>Slider:</p>
+                <input type="range" min="0" max="100" value="50" class="slider" id="intelRange" onchange="updateShare(3)">
+                <p id="intelShares"></p>
+                <p class="sharesOwned">Owned:</p>
+                <p class="sharesValue">Value: </p>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <h2 class="purple">Mutual Funds</h2>
+        <div class="card">
+            <img src="insurance logo.jpg" alt="Trulli">
+            <h3>Insurance Fund</h3>
+
+            <button type="button" id="button" onclick="buy(4)">Buy</button>
+            <button type="button" id="button" onclick="sell(4)">Sell</button>
+            <p id = "insurancecost">Worth = $500</p>
+            <div class="slidecontainer">
+
+
+                <p>Slider:</p>
+                <input type="range" min="0" max="100" value="50" class="slider" id="insuranceRange" onchange="updateShare(4)">
+                <p id="insuranceShares"></p>
+                <p class="sharesOwned">Owned:</p>
+                <p class="sharesValue">Value: </p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="real estate logo.webp" alt="Trulli">
+            <h3>Real Estate Fund</h3>
+
+            <button type="button" id="button" onclick="buy(5)">Buy</button>
+            <button type="button" id="button" onclick="sell(5)">Sell</button>
+            <p id = "realestatecost">Worth = $40</p>
+            <div class="slidecontainer">
+
+
+                <p>Slider:</p>
+                <input type="range" min="0" max="100" value="50" class="slider" id="realestateRange" onchange="updateShare(5)">
+                <p id="realEstateShares"></p>
+                <p class="sharesOwned">Owned:</p>
+                <p class="sharesValue">Value: </p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="technology.webp" alt="Trulli">
+            <h3>Technology Fund</h3>
+
+            <button type="button" id="button" onclick="buy(6)">Buy</button>
+            <button type="button" id="button" onclick="sell(6)">Sell</button>
+            <p id = "technologycost">Worth = $35</p>
+            <div class="slidecontainer">
+
+
+                <p>Slider:</p>
+                <input type="range" min="0" max="100" value="50" class="slider" id="technologyRange" onchange="updateShare(6)">
+                <p id="technologyShares"></p>
+                <p class="sharesOwned">Owned:</p>
+                <p class="sharesValue">Value: </p>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <h2 class="green"> Bonds </h2>
+        <div class="card">
+            <div>
+                <img src="treasury-.jpg" alt="Trulli">
+                <h3>Treasury Bonds</h3>
+                
+            </div>
+            <button type="button" id="button" onclick="buy(7)">Buy</button>
+            <button type="button" id="button" onclick="sell(7)">Sell</button>
+            <p id = "treasurycost">Worth = $100</p>
+            <div class="slidecontainer">
+
+
+                <p>Slider:</p>
+                <input type="range" min="0" max="100" value="50" class="slider" id="treasuryRange" onchange="updateShare(7)">
+                <p id="treasuryShares"></p>
+                <p class="sharesOwned">Owned:</p>
+                <p class="sharesValue">Value: </p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="charles schwab.png" alt="Trulli">
+            <h3>Schwab High Yield Bond</h3>
+
+            <button type="button" id="button" onclick="buy(8)">Buy</button>
+            <button type="button" id="button" onclick="sell(8)">Sell</button>
+            <p id = "schwabcost">Worth = $120</p>
+            <div class="slidecontainer">
+
+
+                <p>Slider:</p>
+                <input type="range" min="0" max="100" value="50" class="slider" id="schwabRange" onchange="updateShare(8)">
+                <p id="schwabShares"></p>
+                <p class="sharesOwned">Owned:</p>
+                <p class="sharesValue">Value: </p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="Vanguard-Logo.png" alt="Trulli">
+            <h3>Vanguard High-Yield Corporate Bond</h3>
+
+            <button type="button" id="button" onclick="buy(9)">Buy</button>
+            <button type="button" id="button" onclick="sell(9)">Sell</button>
+            <p id = "vanguardcost">Worth = $140</p>
+            <div class="slidecontainer">
+
+
+                <p>Slider:</p>
+                <input type="range" min="0" max="100" value="50" class="slider" id="vanguardRange" onchange="updateShare(9)">
+                <p id="vanguardShares"></p>
+                <p class="sharesOwned">Owned:</p>
+                <p class="sharesValue">Value: </p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="fidelity logo.jpg" alt="Trulli">
+            <h3>Fidelity Intermediate Bond</h3>
+
+            <button type="button" id="button" onclick="buy(10)">Buy</button>
+            <button type="button" id="button" onclick="sell(10)">Sell</button>
+            <p id = "fidelitycost">Worth = $160</p>
+            <div class="slidecontainer">
+
+
+                <p>Slider:</p>
+                <input type="range" min="0" max="100" value="50" class="slider" id="fidelityRange" onchange="updateShare(10)">
+                <p id="fidelityShares"></p>
+                <p class="sharesOwned">Owned:</p>
+                <p class="sharesValue">Value: </p>
+            </div>
+        </div>
+    </div>
+    <div id="back">
+    <a href="index.html">
+          <button type="button" id="buttonn">BACK</button>
+            </a>
+    <script src="script.js"></script>
+    <script src="api.mjs"></script>
+        </div>
+</body>
+
+</html>

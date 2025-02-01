@@ -1,0 +1,6 @@
+{
+  "type":"module",
+  "dependencies": {
+    "finnhub": "^1.2.18"
+  }
+}
