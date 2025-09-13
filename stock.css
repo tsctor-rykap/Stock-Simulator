@@ -7,6 +7,9 @@ html {
 .section{
   
 }
+body{
+  position: relative;
+}
 .card{
   background-color: #266193;
   min-height: 300px;
@@ -25,8 +28,8 @@ html {
   
   display:inline-block;
   margin:0;
-  /* font-size: 50px; */
-  
+  /* font-size: 50px;
+   */
 }
 h3{
   color:white;
@@ -80,6 +83,41 @@ img{
   background: #fa89cd;
   cursor: pointer;
 }
+.popUp{
+  /* min-width: 30vw;
+  min-height: 15vw; */
+  width:40vw;
+  height:20vw;
+  background:#aa5574;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  z-index:100;
+  transform: translate(-50%, -50%); 
+  border-radius: 7px;
+  border: double white;
+  border-width: 7px;
+
+  text-align:center;
+  animation: appear 0.5s forwards
+}
+.popUp h2{
+  color:white;
+ height: 20%;
+  margin:10px
+}
+.popUp p{
+  height:30%;
+  margin:0
+}
+.popUp h3{
+  height: 20%;
+  margin:0
+}
+.popUp button{
+  height: 10%;
+  margin:0
+}
 #cashdiv{
   display: flex;
   flex-direction: row;
@@ -91,11 +129,12 @@ img{
   width: 30px;
 }
 #status{
-  height: 130px;
-  width: 500px;
+  height: 200px;
+  width: 600px;
   background-color: #f0f0ed;
   border-radius: 5px;
-
+  display:flex;
+  justify-content: space-between;
 }
 
 #pie{
@@ -103,7 +142,8 @@ img{
   width: 160px;
   background:  #A1C3D1;
   margin-right: 50px;
-  
+  margin-top: 20px;
+  /* margin-left: 300px; */
 }
 #stock{
   display: flex;
@@ -111,9 +151,9 @@ img{
   align-items: center;
   
 }
-#cash{
+.cashtext{
   color:black;
-  padding: 10px;
+  padding-left: 10px;
 }
 #appleRange::-webkit-slider-thumb {
   -webkit-appearance: none;
@@ -204,6 +244,8 @@ img{
   cursor: pointer;
 }
 #buttonn{
+  margin-left: 5px;
+  margin-top: 10px;
   padding: 5px;
   font-weight: 700;
   height: 40px;
@@ -214,4 +256,30 @@ img{
   display: flex;
   justify-content: flex-end;
   padding-bottom: 40px;
+}
+.time img{
+  height: 60px;
+  width: 60px;
+  padding-top: 15px;
+}
+.time{
+  text-align: center;
+}
+
+h4{
+  color: black;
+  padding: 0px;
+  
+}
+@keyframes appear{
+  from {
+    top:30%;
+    opacity:0;
+  }
+  
+  to{
+    top:20%;
+    opacity:1;
+  }
+  
 }

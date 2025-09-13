@@ -10,7 +10,12 @@
 </head>
 
 <body>
-
+<!-- <div class="popUp"> -->
+    <!-- <h2>Title</h2>
+    <p>message</p>
+    <h3>effect</h3>
+    <button onclick="removePopup(this)">Acknowledge</button>
+</div> -->
     <div class="section">
         <div id="cashdiv">
             
@@ -18,17 +23,30 @@
                     
                 
             
-        <div id="stock">
-            <div id="pie">
-                
-            </div>
-            <div id="status">
-                
-            <h3 id="cash">Money</h3>
-                  <button type="button" onclick="updateCash()" id="buttonn">Continue</button>
+            <div id="stock">
+                <!-- <div id="pie">
+                    
+                </div> -->
+                <div id="status">
+                    <div style="display:flex; flex-direction:column">
+                    <h3 class="cashtext" id="cash">Money</h3>
+                        <h3 class="cashtext" id="worth">Net Worth</h3>
+                        <div>
+                    <button type="button" onclick="updateCash()"id="buttonn">Continue</button>
+                        <button id="buttonn" onclick="saveData()">Save</button>
+                        </div>
+                    </div>
+                    <div class="time">
+                        <img src="sun.png" alt="moon.png" id="picture">
+                        <!-- <img src="moon.png" alt=""> -->
+                        <h4 id="clock"></h4>
+                        <h4 id="day"> Day 1</h4>
+                    </div>
+                    <div id="pie">
 
+                    </div>
+                </div>
             </div>
-        </div>
         </div>
         <div class="card" >
             

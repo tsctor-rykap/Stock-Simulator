@@ -9,7 +9,21 @@
 </head>
 
 <body>
-  
+  <div class="popup" id="stockie" hidden=true>
+    <h2 class="popuptitle">Welcome to the Stock Simulator</h2>
+    <div>
+      <button onclick="location.href='stocks.html'">New</button>
+      <button onclick="createPopup()">Continue</button>
+     
+    </div>
+     <!-- <div class="savefile">
+       <p>Money: 1,000.50</p>
+       <p>Net Worth: 50,0000</p>
+       <p>Day: 30</p>
+       <p>6/27/2001, 2:00am</p>
+       <div class="pie">Pie</div>
+     </div> -->
+  </div>
   <div id="backgroundimg">
     <div id="header">
     <div id=opacitychanger>
@@ -18,9 +32,9 @@
     <div id="title">
     <h1> Love Money</h1>
     <h3> "I know you do!"</h3>
-      <a href="stocks.html">
-      <button type="button" id="button">START!</button>
-        </a>
+    
+      <button type="button" id="button"onclick="showStockMenu()">START!</button>
+     
     </div>
     
  
@@ -50,7 +64,7 @@
   <img src="mutuals.jpeg" alt="Trulli" >
     </div>
     </div>
-  <script src="script.js"></script>
+  <script src="home.js"></script>
 </body>
 
 </html>

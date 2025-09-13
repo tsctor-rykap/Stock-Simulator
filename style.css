@@ -123,4 +123,51 @@ color: black; */
   to{
     opacity:1
   }
+  
+}
+.popup{
+  position:absolute;
+  height: 40vh;
+    width: 40vw;
+    background: #9577a6;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  border: double white 10px;
+  overflow-y: scroll;
+}
+.popuptitle{
+  margin-top: 20px;
+}
+.popup button{
+  height: 30px;
+  width: 60px;
+}
+.pie{
+  width: 20%;
+  height:20%;
+  background: blue;
+}
+.savefile{
+  display:flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color:  pink;
+  margin-left:5%;
+  margin-right:5%;
+  border: solid white 3px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  margin-bottom: 6px;
+  
+}
+.savefile p {
+  padding-left: 5%;
+  font-size: 12pt;
+  color: black;
+}
+.popup a {
+  text-decoration: none;
 }
