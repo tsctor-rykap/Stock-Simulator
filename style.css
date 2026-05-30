@@ -1,173 +1,187 @@
 @import url('https://fonts.googleapis.com/css2?family=Handlee&family=Space+Grotesk:wght@300..700&display=swap');
-*{
-  padding:0;
-  margin:0;
+
+* {
+  padding: 0;
+  margin: 0;
   font-family: Handlee;
 }
+
 html {
   height: 100%;
   width: 100%;
   background-color: #A1C3D1;
   color: white;
 }
-/* div{
-  background-color: #F172A1;
-  width: 200px;
-  height: 100px;
-  
-} */
-h1{
+
+h1 {
   color: #E64398;
   font-size: 50px;
 }
-h3{
+
+h3 {
 
   color: #9577a6;
   font-size: 20px;
-  
+
 }
-img{
+
+img {
   width: 300px;
   height: 300;
 }
-#backgroundimg{
+
+#backgroundimg {
   background-image: url("money-2.webp");
   background-size: cover;
-  /* background-repeat: no-repeat; */
+
   height: 60vh;
-  width:100vw;
-  
+  width: 100vw;
+
 }
-#opacitychanger{
+
+#opacitychanger {
   background-color: white;
   height: 25vh;
   width: 50vw;
   opacity: 0.75;
-  /* display: inline-block; */
-  /* position: relative;
-  top: 12vh;
-  left: 25vw; */
+
 }
-#title{
-  /* position: absolute; */
-  margin:auto;
+
+#title {
+
+  margin: auto;
   width: 300px;
   height: 200px;
   top: -10vh;
-  /* left: 12vw; */
+
   text-align: center;
-  position:relative;
+  position: relative;
   z-index: 3;
-  
+
 }
-#main{
+
+#main {
   padding: 20px;
-  margin:auto;
+  margin: auto;
   width: 690px;
-  
+
 }
-.section{
+
+.section {
   box-sizing: border-box;
   padding: 5%;
   vertical-align: top;
-  display:flex;
-align-items: center;
+  display: flex;
+  align-items: center;
   margin: auto;
-  /* background-color:#c7becc;
-color: black; */
+
   background-color: #9577a6;
   border-radius: 15px;
   animation: fadeeinn 5s;
 }
-.section img{
+
+.section img {
   height: 300px;
   width: 350px;
   margin-left: 10px;
 }
-.section p{
+
+.section p {
   width: 300px;
-  position:relative;
-  top:0px;
+  position: relative;
+  top: 0px;
   font-size: 20px;
   padding-right: 10px;
-  
+
 }
-#main h2{
+
+#main h2 {
   text-align: center;
   padding: 2%;
   font-size: 35px;
-  /* text-shadow: 0 0 3px #E64398; */
-  
+
+
 }
-#button{
+
+#button {
   padding: 5px;
   font-weight: 700;
   height: 40px;
   width: 100px;
 }
-#header{
+
+#header {
   position: relative;
   display: flex;
   align-items: center;
-    height: 25vh;
-    width: 50vw;
-  margin:auto;
-  top:10vh;
+  height: 25vh;
+  width: 50vw;
+  margin: auto;
+  top: 10vh;
   text-align: center;
   z-index: 2;
 }
-@keyframes fadeeinn{
-  from{
-    opacity:0
+
+@keyframes fadeeinn {
+  from {
+    opacity: 0
   }
-  to{
-    opacity:1
+
+  to {
+    opacity: 1
   }
-  
+
 }
-.popup{
-  position:absolute;
+
+.popup {
+  position: absolute;
   height: 40vh;
-    width: 40vw;
-    background: #9577a6;
+  width: 40vw;
+  background: #9577a6;
   z-index: 100;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   text-align: center;
   border: double white 10px;
   overflow-y: scroll;
 }
-.popuptitle{
+
+.popuptitle {
   margin-top: 20px;
 }
-.popup button{
+
+.popup button {
   height: 30px;
   width: 60px;
 }
-.pie{
+
+.pie {
   width: 20%;
-  height:20%;
+  height: 20%;
   background: blue;
 }
-.savefile{
-  display:flex;
+
+.savefile {
+  display: flex;
   justify-content: flex-start;
   align-items: center;
-  background-color:  pink;
-  margin-left:5%;
-  margin-right:5%;
+  background-color: pink;
+  margin-left: 5%;
+  margin-right: 5%;
   border: solid white 3px;
   padding-top: 13px;
   padding-bottom: 13px;
   margin-bottom: 6px;
-  
+
 }
+
 .savefile p {
   padding-left: 5%;
   font-size: 12pt;
   color: black;
 }
+
 .popup a {
   text-decoration: none;
 }

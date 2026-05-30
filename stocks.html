@@ -10,12 +10,7 @@
 </head>
 
 <body>
-<!-- <div class="popUp"> -->
-    <!-- <h2>Title</h2>
-    <p>message</p>
-    <h3>effect</h3>
-    <button onclick="removePopup(this)">Acknowledge</button>
-</div> -->
+
     <div class="section">
         <div id="cashdiv">
             
@@ -24,9 +19,7 @@
                 
             
             <div id="stock">
-                <!-- <div id="pie">
-                    
-                </div> -->
+               
                 <div id="status">
                     <div style="display:flex; flex-direction:column">
                     <h3 class="cashtext" id="cash">Money</h3>
@@ -38,13 +31,11 @@
                     </div>
                     <div class="time">
                         <img src="sun.png" alt="moon.png" id="picture">
-                        <!-- <img src="moon.png" alt=""> -->
+                        
                         <h4 id="clock"></h4>
                         <h4 id="day"> Day 1</h4>
                     </div>
-                    <div id="pie">
-
-                    </div>
+                    <canvas id = "pie" height="160" width="160"></canvas>
                 </div>
             </div>
         </div>
@@ -55,29 +46,31 @@
 
             <button type="button" id="button" onclick="buy(0)">Buy</button>
             <button type="button" id="button" onclick="sell(0)">Sell</button>
+            <canvas height="50" width="280" id="appleGraph" class = "stockGraph"></canvas>
             <p id = "applecost">Worth = $200</p>
             <div class="slidecontainer">
 
 
-                <p>Slider</p>
+                
                 <input type="range" min="0" max="100" value="50" class="slider"  id="appleRange" onchange="updateShare(0)">
                 <p id="appleShares"></p>
                 <p class="sharesOwned">Owned:</p>
                 <p class="sharesValue">Value: </p>
             </div>
         </div>
-        <!-- </div> -->
+       
         <div class="card">
             <img src="Walt-Disney-.jpg" alt="Trulli">
             <h3>Walt Disney Co</h3>
 
             <button type="button" id="button" onclick="buy(1)">Buy</button>
             <button type="button" id="button" onclick="sell(1)">Sell</button>
+             <canvas height="50" width="280" id="disneyGraph" class = "stockGraph"></canvas>
             <p id = "disneycost">Worth = $95</p>
             <div class="slidecontainer">
 
 
-                <p>Slider:</p>
+               
                 
                 <input type="range" min="0" max="100" value="50" class="slider" id="disneyRange" onchange="updateShare(1)">
                 <p id="disneyShares"></p>
@@ -92,11 +85,12 @@
 
             <button type="button" id="button" onclick="buy(2)">Buy</button>
             <button type="button" id="button" onclick="sell(2)">Sell</button>
+             <canvas height="50" width="280" id="teslaGraph" class = "stockGraph"></canvas>
             <p id = "teslacost">Worth = $250</p>
             <div class="slidecontainer">
 
 
-                <p>Slider:</p>
+               
                 <input type="range" min="0" max="100" value="50" class="slider" id="teslaRange" onchange="updateShare(2)">
                 <p id="teslaShares"></p>
                 <p class="sharesOwned">Owned:</p>
@@ -109,11 +103,12 @@
 
             <button type="button" id="button" onclick="buy(3)">Buy</button>
             <button type="button" id="button" onclick="sell(3)">Sell</button>
+             <canvas height="50" width="280" id="intelGraph" class = "stockGraph"></canvas>
             <p id = "intelcost">Worth = $25</p>
             <div class="slidecontainer">
 
 
-                <p>Slider:</p>
+              
                 <input type="range" min="0" max="100" value="50" class="slider" id="intelRange" onchange="updateShare(3)">
                 <p id="intelShares"></p>
                 <p class="sharesOwned">Owned:</p>
@@ -129,11 +124,12 @@
 
             <button type="button" id="button" onclick="buy(4)">Buy</button>
             <button type="button" id="button" onclick="sell(4)">Sell</button>
+             <canvas height="50" width="280" id="insuranceGraph" class = "stockGraph"></canvas>
             <p id = "insurancecost">Worth = $500</p>
             <div class="slidecontainer">
 
 
-                <p>Slider:</p>
+               
                 <input type="range" min="0" max="100" value="50" class="slider" id="insuranceRange" onchange="updateShare(4)">
                 <p id="insuranceShares"></p>
                 <p class="sharesOwned">Owned:</p>
@@ -146,11 +142,12 @@
 
             <button type="button" id="button" onclick="buy(5)">Buy</button>
             <button type="button" id="button" onclick="sell(5)">Sell</button>
+             <canvas height="50" width="280" id="realestateGraph" class = "stockGraph"></canvas>
             <p id = "realestatecost">Worth = $40</p>
             <div class="slidecontainer">
 
 
-                <p>Slider:</p>
+                
                 <input type="range" min="0" max="100" value="50" class="slider" id="realestateRange" onchange="updateShare(5)">
                 <p id="realEstateShares"></p>
                 <p class="sharesOwned">Owned:</p>
@@ -163,11 +160,12 @@
 
             <button type="button" id="button" onclick="buy(6)">Buy</button>
             <button type="button" id="button" onclick="sell(6)">Sell</button>
+             <canvas height="50" width="280" id="technologyGraph" class = "stockGraph"></canvas>
             <p id = "technologycost">Worth = $35</p>
             <div class="slidecontainer">
 
 
-                <p>Slider:</p>
+                
                 <input type="range" min="0" max="100" value="50" class="slider" id="technologyRange" onchange="updateShare(6)">
                 <p id="technologyShares"></p>
                 <p class="sharesOwned">Owned:</p>
@@ -185,11 +183,12 @@
             </div>
             <button type="button" id="button" onclick="buy(7)">Buy</button>
             <button type="button" id="button" onclick="sell(7)">Sell</button>
+             <canvas height="50" width="280" id="appleGraph" class = "stockGraph"></canvas>
             <p id = "treasurycost">Worth = $100</p>
             <div class="slidecontainer">
 
 
-                <p>Slider:</p>
+                
                 <input type="range" min="0" max="100" value="50" class="slider" id="treasuryRange" onchange="updateShare(7)">
                 <p id="treasuryShares"></p>
                 <p class="sharesOwned">Owned:</p>
@@ -202,11 +201,12 @@
 
             <button type="button" id="button" onclick="buy(8)">Buy</button>
             <button type="button" id="button" onclick="sell(8)">Sell</button>
+             <canvas height="50" width="280" id="appleGraph" class = "stockGraph"></canvas>
             <p id = "schwabcost">Worth = $120</p>
             <div class="slidecontainer">
 
 
-                <p>Slider:</p>
+                
                 <input type="range" min="0" max="100" value="50" class="slider" id="schwabRange" onchange="updateShare(8)">
                 <p id="schwabShares"></p>
                 <p class="sharesOwned">Owned:</p>
@@ -219,11 +219,12 @@
 
             <button type="button" id="button" onclick="buy(9)">Buy</button>
             <button type="button" id="button" onclick="sell(9)">Sell</button>
+             <canvas height="50" width="280" id="appleGraph" class = "stockGraph"></canvas>
             <p id = "vanguardcost">Worth = $140</p>
             <div class="slidecontainer">
 
 
-                <p>Slider:</p>
+                
                 <input type="range" min="0" max="100" value="50" class="slider" id="vanguardRange" onchange="updateShare(9)">
                 <p id="vanguardShares"></p>
                 <p class="sharesOwned">Owned:</p>
@@ -236,11 +237,12 @@
 
             <button type="button" id="button" onclick="buy(10)">Buy</button>
             <button type="button" id="button" onclick="sell(10)">Sell</button>
+             <canvas height="50" width="280" id="appleGraph" class = "stockGraph"></canvas>
             <p id = "fidelitycost">Worth = $160</p>
             <div class="slidecontainer">
 
 
-                <p>Slider:</p>
+                
                 <input type="range" min="0" max="100" value="50" class="slider" id="fidelityRange" onchange="updateShare(10)">
                 <p id="fidelityShares"></p>
                 <p class="sharesOwned">Owned:</p>
@@ -253,7 +255,7 @@
           <button type="button" id="buttonn">BACK</button>
             </a>
     <script src="script.js"></script>
-    <script src="api.mjs"></script>
+   
         </div>
 </body>
 

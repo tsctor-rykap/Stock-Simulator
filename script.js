@@ -1,3 +1,4 @@
+// NEF1U0xUNElKUkZTRmJHNm9CcVkxOGFJZDY2TGpCNm1FOG50aS15SC1VTT0
 let queryString = window.location.search
 let params = new URLSearchParams(queryString)
 
@@ -7,18 +8,39 @@ if (params.get("id")) {
   var fielID = Number(params.get("id"))
   var day = storedFile.fileDay
   var assets = storedFile.fileAssets
+  
   var cost = storedFile.fileCost
-
+var stockHistory = storedFile.fileHistory
   var cash = storedFile.fileCash
 } else {
+  var stockHistory = {
+    0:[],
+    1:[],
+    2:[],
+    3:[],
+    4:[],
+    5:[],
+    6:[],
+    7:[],
+    8:[],
+    9:[],
+    10:[]
+  }
   var fileID = -1
   var day = 0
   var assets = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
   var bonds = 0
   var funds = 0
   var stocks = 0
+  var midPrices = JSON.parse (localStorage.getItem("middle")).mid
+    console.log(midPrices)
+  if(midPrices){
+    var cost = [...midPrices, 100, 40, 35, 100, 120, 140, 160]
+  } else{
   var cost = [200, 95, 250, 25, 100, 40, 35, 100, 120, 140, 160]
+  }
   var cash = 50000
+  
 }
 let turns = 10
 let netWorth = 0
@@ -75,39 +97,73 @@ function updateSharesOwned() {
   }
 }
 
-let pie = document.getElementById("pie")
-/**
+
+/*
  * Calculate and display the portion of net value.
  * allocated to each individual stock
  */
+
 function updatePie() {
-  pie.style = "background: green"
+ 
+
+  let canvas = document.getElementById("pie")
+  let ctx = canvas.getContext("2d")
+
+  
   let total = 0
+  let maxvalue = 0
   for (let i = 0; i < cost.length; i++) {
     total += cost[i] * assets[i]
-
+    if (cost[i] > maxvalue){
+      maxvalue = cost[i]
+    }
   }
   total += cash
-  total /= 100
-  let moneyEnd = cash / total
-  let appleEnd = moneyEnd + (assets[0] * cost[0]) / total
-  let disneyEnd = appleEnd + (assets[1] * cost[1]) / total
-  let teslaEnd = disneyEnd + (assets[2] * cost[2]) / total
-  let intelEnd = teslaEnd + (assets[3] * cost[3]) / total
-  let insuranceEnd = intelEnd + (assets[4] * cost[4]) / total
-  let realestateEnd = insuranceEnd + (assets[5] * cost[5]) / total
-  let technologyEnd = realestateEnd + (assets[6] * cost[6]) / total
-  let treasuryEnd = technologyEnd + (assets[7] * cost[7]) / total
-  let schwabEnd = treasuryEnd + (assets[8] * cost[8]) / total
-  let vanguardEnd = schwabEnd + (assets[9] * cost[9]) / total
-  let fidelityStart = vanguardEnd
-
-  let style = `background: conic-gradient(#4a6951 0% ${moneyEnd}%, red ${moneyEnd}% ${appleEnd}%, blue ${appleEnd}% ${disneyEnd}%, black ${disneyEnd}% ${teslaEnd}%, #9ac6f5 ${teslaEnd}% ${intelEnd}%, #f277b9 ${intelEnd}% ${insuranceEnd}%, #dbdbaf ${insuranceEnd}% ${realestateEnd}%, yellow ${realestateEnd}% ${technologyEnd}%, #4bad9b ${technologyEnd}% ${treasuryEnd}%, gray ${treasuryEnd}% ${schwabEnd}%, #8f2446 ${schwabEnd}% ${vanguardEnd}%,  #1c8c22 ${fidelityStart}%);
-  border-radius:50%;
-  width: 160px;
-  height: 160px;`
-
-  pie.style = style
+  
+  let moneyEnd = cash / total 
+  let sliceStart = 0
+  let sliceEnd = moneyEnd
+  //Draw the initial slice for cash percentage
+  ctx.beginPath()
+  ctx.strokeStyle = "#78c28c"
+ 
+  let lastx = 0
+  let lasty = 160
+  ctx.beginPath()
+ ctx.arc(80,80,80, 0, 2*Math.PI)
+  ctx.arc(80, 80, 80, sliceStart*Math.PI/2, sliceEnd*Math.PI/2)
+  ctx.moveTo(80,80)
+  ctx.closePath()
+   ctx.fillStyle="#78c28c"
+  ctx.stroke()
+  ctx.fill()
+  sliceStart+=sliceEnd
+  let sliceColor = [
+                      "red",
+                      "blue",
+                      "black",
+                      "#9ac6f5",
+                      "#f277b9",
+                      "#dbdbaf",
+                      "yellow",
+                      "#4bad9b",
+                      "gray",
+                      "#8f2446",
+                      "#1c8c22"]
+  for(let i=0; i < cost.length; i++){
+    let slicePercent = (cost[i]*assets[i])/(total)
+    console.log(sliceStart, sliceStart + slicePercent)
+    ctx.fillStyle = sliceColor[i]
+    ctx.beginPath()
+    ctx.arc(80, 80, 80, (sliceStart)*Math.PI*2, (((sliceStart+slicePercent)))*Math.PI*2)
+    ctx.lineTo(80,80)
+    ctx.closePath()
+    ctx.stroke()
+    ctx.fill()
+  sliceStart+=slicePercent
+    
+  }
+ 
 }
 
 console.log(pie.style);
@@ -169,11 +225,16 @@ function updateCost() {
     alert("You need to buy or sell " + turnsleft + " items")
     return false;
   }
+  //Update the stock history before changing the price
 
   dailyEvents()
+   const graphs = document.getElementsByClassName("stockGraph")
   for (let i = 0; i < costarray.length; i++) {
+    stockHistory[i].push(cost[i])
     costarray[i].innerHTML = `Worth = $${cost[i].toFixed(2)}`
+    drawHistory(graphs[i].getContext('2d'),i)
   }
+
   turns = 0
   return true;
 }
@@ -181,11 +242,15 @@ function dailyEvents() {
   const events = [
     {
       title: "Market Crash",
-      message: "Disney releases a new movie",
+      message: "A movie hyped up by Disney was delayed numerous times.",
       effect: {
         marketchange: "negative",
         change: {
-          1: -2.0
+          0: -2.0,
+          1: -2.0,
+          6: -2.5,
+          9: -2.5
+          
         }
       },
       weight: 1
@@ -198,7 +263,8 @@ function dailyEvents() {
         change: {
           0: -2.0,
           3: -4.0,
-          6: -3.0
+          6: -3.0,
+          2: -4.5
 
         }
       },
@@ -212,7 +278,9 @@ function dailyEvents() {
         marketchange: "positive",
         change: {
           0: 2.5,
-          2: -2.0
+          2: 2.0,
+          4: 3.0,
+          6: 4.0
         }
       },
       weight: 1
@@ -238,6 +306,7 @@ function dailyEvents() {
       effect: {
         marketchange: "stable",
         change: {
+          0:-0.25,
           5: 0.25,
           7: -0.5,
           2: 0.5
@@ -253,7 +322,8 @@ function dailyEvents() {
         change: {
           6: 0.25,
           3: -0.5,
-          8: 0.5
+          8: 0.5,
+          0: 0.25
         }
       },
       weight: 2
@@ -293,6 +363,7 @@ function dailyEvents() {
 
   }
 }
+
 function removePopup(btn) {
   console.log(btn.parentElement)
   btn.parentElement.remove()
@@ -349,7 +420,8 @@ function saveData() {
     fileDay: day - 1,
     fileCash: cash,
     fileAssets: assets,
-    fileCost: cost
+    fileCost: cost,
+  fileHistory: stockHistory
 
   }
   if (fileID === -1) {
@@ -360,10 +432,60 @@ function saveData() {
   localStorage.setItem("saveFiles", JSON.stringify(allSaves))
   alert("Data saved!")
 }
-// let data=
-//   [
-//     {
+function drawHistory(ctx,id){
+  console.log(stockHistory)
+  ctx.rect(0, 0, 280, 50)
+  ctx.fillStyle = '#266193'
+  ctx.fill();
+  // Establishing baseline and range of prices
+  let basePrice = stockHistory[id][0]
+  let stockPrices = stockHistory[id]
+  let maxPrice= Math.max(...stockPrices,basePrice + 1)
+  let minPrice = Math.min(...stockPrices, basePrice - 1)
+  function drawBaseLine(ctx){
+    let percentHeight = (basePrice-minPrice)/(maxPrice - minPrice)
+    let baseheight = percentHeight* 50
 
-//     }
-//   ]
+    ctx.strokeStyle = "black"
+    ctx.beginPath()
+    ctx.moveTo(0,50-baseheight)
+    ctx.lineTo(280,50-baseheight)
+    ctx.stroke()
+  }
+  drawBaseLine(ctx)
+  function plotPoints(ctx){
+    let xposition = 0
+    ctx.moveTo(xposition, 50-((100-minPrice)/(maxPrice - minPrice))*50)
+    if(stockPrices[stockPrices.length - 1] > basePrice){
+      ctx.strokeStyle = "#37fc28"
+    } else {
+      ctx.strokeStyle = "red"
+    }
+    ctx.beginPath()
+    for(price of stockPrices){
+     
+      let percentHeight = (price-minPrice)/(maxPrice - minPrice)
+     
+      let baseheight = percentHeight* 50
+      ctx.lineTo(xposition, 50-baseheight)
+      ctx.moveTo(xposition, 50-baseheight)
+      
+      
+      xposition+= 280/(stockPrices.length - 1)
+      console.log(price, xposition, 50-baseheight)
+    }
+    ctx.stroke()
+  }
+  plotPoints(ctx)
+}
+
+
+
+
+
+
+
+
+
+
 

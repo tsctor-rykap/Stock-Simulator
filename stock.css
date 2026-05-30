@@ -28,8 +28,7 @@ body{
   
   display:inline-block;
   margin:0;
-  /* font-size: 50px;
-   */
+ 
 }
 h3{
   color:white;
@@ -44,15 +43,7 @@ img{
   height: 50px;
   width: 70px;
 }
-/* .pink{
-  color:#aa5574;
-}
-.purple{
-  color: #84639c;
-}
-.green{
-  color: #4ba172;
-} */
+
 .slider {
   -webkit-appearance: none;
   width: 100%;
@@ -84,8 +75,7 @@ img{
   cursor: pointer;
 }
 .popUp{
-  /* min-width: 30vw;
-  min-height: 15vw; */
+ 
   width:40vw;
   height:20vw;
   background:#aa5574;
@@ -140,11 +130,16 @@ img{
 #pie{
   height: 160px;
   width: 160px;
-  background:  #A1C3D1;
+  
   margin-right: 50px;
   margin-top: 20px;
-  /* margin-left: 300px; */
+ 
+  
 }
+canvas{
+  border: solid black 1px;
+  border-radius: 50%;
+} 
 #stock{
   display: flex;
   flex-direction: row;
@@ -282,4 +277,14 @@ h4{
     opacity:1;
   }
   
+  
+}
+#appleGraph{
+  
+}
+.stockGraph{
+  border: solid black 2px;
+  border-radius: 0%;
+  margin-top: 10px;
+  margin-left: 8px;
 }
